@@ -1,11 +1,8 @@
-
-import './App.css';
+import Body from "./components/Body";
 
 function App() {
   return (
-    <div className="App m-5">
-     <h1>Nameshtha React</h1>
-    </div>
+    <Body/>
   );
 }
 
