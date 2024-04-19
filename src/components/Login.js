@@ -1,17 +1,15 @@
 import React, { useRef, useState } from 'react'
-import { Netflex_Logo } from '../utils/constant';
 import { Signin_Background } from '../utils/constant';
 import { ValidData } from '../utils/Validate';
 import { createUserWithEmailAndPassword ,signInWithEmailAndPassword,updateProfile} 
 from "firebase/auth";
 import { auth } from '../utils/firebase';
-import { useNavigate } from 'react-router-dom';
+import Header from './Header';
 
 
 
 const Login = () => {
-  const navigate = useNavigate();
-  const [isSignIn,setIsSignIn] = useState(true);
+   const [isSignIn,setIsSignIn] = useState(true);
   const [errorMessage,seterrorMessage] = useState();
     
   const email = useRef();
@@ -29,35 +27,28 @@ const Login = () => {
         createUserWithEmailAndPassword
         (auth,email.current.value,password.current.value)
   .then((userCredential) => {
-    // Signed up 
-    const user = userCredential.user;
+     const user = userCredential.user;
     updateProfile(user, {
       displayName: user.auth.displayName,
       phoneNumber: mobile.current.value,
       
     })    
     setIsSignIn(!isSignIn)
-     // ...
-  })
+     })
   .catch((error) => {
     const errorCode = error.code;
-    const errorMessage = error.message;
-    seterrorMessage(errorCode);
-    // ..
+      seterrorMessage(errorCode);
+  
   });
       }
   else{
     signInWithEmailAndPassword(auth,email.current.value,password.current.value)
   .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    console.log(user);
-    navigate("/browse")
-    // ...
+     const user = userCredential.user;
+      
   })
   .catch((error) => {
     const errorCode = error.code;
-    const errorMessage = error.message;
     seterrorMessage(errorCode);
   });
   }
@@ -67,11 +58,7 @@ const Login = () => {
   };
   return (
     <div className='bg-gradient-to-b from-black '>
-     <div className="absolute px-8 py-2 bg-gradient-to-b from-black z-10">
-        <img className='w-44'
-        src={Netflex_Logo}
-        alt="Logo"/>
-    </div>
+     <Header/>
     <div>
         <img className='absolute'
         src={Signin_Background}
