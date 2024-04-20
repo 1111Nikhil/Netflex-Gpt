@@ -14,3 +14,5 @@ export const API_OPTIONS = {
         "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1YmIyOTA0NTZmZWM1MWQ2MTI3Y2FjN2YxMzZlMGJjYiIsInN1YiI6IjY2MjIyMGI1N2EzYzUyMDE2NDRjOTBmZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.rp0remfrsLKO3F5JVFTWid7Ebjh4peGCHA5iQTzIJwM",
     },
   };
+
+export const Image_url ="https://image.tmdb.org/t/p/w220_and_h330_face/"; 
