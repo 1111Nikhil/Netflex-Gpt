@@ -16,3 +16,10 @@ export const API_OPTIONS = {
   };
 
 export const Image_url ="https://image.tmdb.org/t/p/w220_and_h330_face/"; 
+
+export const SUPPORTED_LANGUAGES = [
+  { identifier: "en", name: "English" },
+  { identifier: "hindi", name: "हिंदी" },
+  {identifier:"kannada", name:"ಕನ್ನಡ"},
+  { identifier: "spanish", name: "española" },
+];

@@ -9,15 +9,21 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser,removeUser } from "../utils/userSlice";
 import { Link } from 'react-router-dom';
+import { selectLanguage } from '../utils/configSlice';
+import { SUPPORTED_LANGUAGES } from '../utils/constant';
+import lang from '../utils/constLang';
 
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [signout,setSignout] = useState(false);
   const user = useSelector((store)=>store.user);
-  console.log(user);
+  const setLang = useSelector(store => store.config.lang);
   const HandelSignOut = () =>{
     signout?setSignout(false):setSignout(true)
+  }
+  const HandelLanguage=(e) =>{
+      dispatch(selectLanguage(e.target.value))
   }
    const HandelUser =() =>{
     signOut(auth).then(() => {
@@ -49,21 +55,28 @@ const Header = () => {
         
  { user && <ul className='flex font-semibold text-center '>
     <Link to="/browse/">
-    <li className='p-4 text-white '>Home</li>
+    <li className='p-4 text-white '>{lang[setLang].Home}</li>
     </Link>
     <Link to="/browse/tvShow">
-    <li className='p-4 text-white'>TV Show</li>
+    <li className='p-4 text-white'>{lang[setLang].tvshow}</li>
     </Link>
     <Link to="/browse/movies">
-    <li className='p-4 text-white'>Movies</li>
+    <li className='p-4 text-white'>{lang[setLang].movies}</li>
     </Link>
 
     <Link to="/browse/search">
-    <li className='p-4 text-white'>Search</li>
+    <li className='p-4 text-white'>{lang[setLang].search}</li>
     </Link>
   </ul>}
     </div>
     { user &&<div className='flex'>
+    { lang &&<select className='m-2 px-1 bg-gray-200'
+    onChange={HandelLanguage}>
+      {SUPPORTED_LANGUAGES.map((lang) => (
+        <option key={lang.identifier}
+         value={lang.identifier}>{lang.name}</option>
+      ))}
+    </select>}
     <img className='h-12'
     src={User_Log} alt='User_Log'/>
     <h1 className='font-bold text-white pt-4'>{user?.name}</h1>
