@@ -15,7 +15,6 @@ const Login = () => {
   const email = useRef();
    const password = useRef();
   const name = useRef();
-  console.log(name);
    const mobile = useRef();
      const HandelClick = (e) =>{
     e.preventDefault()
@@ -29,10 +28,10 @@ const Login = () => {
   .then((userCredential) => {
      const user = userCredential.user;
     updateProfile(user, {
-      displayName: user.auth.displayName,
-      phoneNumber: mobile.current.value,
-      
+      displayName: name.current.value,
+      phoneNumber: mobile.current.value, 
     })    
+    console.log(user);
     setIsSignIn(!isSignIn)
      })
   .catch((error) => {

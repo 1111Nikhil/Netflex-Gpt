@@ -1,7 +1,5 @@
 import Header from './Header';
 import useNowPlaying from '../hooks/useNowPlaying';
-import MainContainer from './MainContainer';
-import SecondaryContainer from './SecondaryContainer';
 import usePopularMovies from '../hooks/usePopularMovies';
 import useTopRated from '../hooks/useTopRated';
 import useUpComing from '../hooks/useUpComing';
@@ -9,7 +7,8 @@ import useAiringTv from '../hooks/useAiringTv';
 import useOnTheAir from '../hooks/useOnTheAir';
 import usePopularTv from '../hooks/usePopularTv';
 import useTopRatedTv from '../hooks/TopRatedTv';
-import ShowContainer from './Showcontainer';
+import { Outlet } from 'react-router-dom';
+import Footer from './Footer';
 
 const Browse = () => {
   useNowPlaying();
@@ -21,11 +20,10 @@ const Browse = () => {
   usePopularTv();
   useTopRatedTv();
     return (
-    <div className='bg-black'>
+    <div className='bg-black '>
       <Header/>
-      <MainContainer/>
-      <SecondaryContainer/>
-      <ShowContainer/>
+      <Outlet/>
+      <Footer/>
     </div>
   )
 }

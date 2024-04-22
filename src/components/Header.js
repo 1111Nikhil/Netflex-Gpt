@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser,removeUser } from "../utils/userSlice";
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -26,8 +27,7 @@ const Header = () => {
   }
   useEffect(()=>{
     const unSubscribe = onAuthStateChanged(auth, (user) => {
-        if (user) {
-          
+        if (user) {   
           const {uid,email,displayName} = user;
           dispatch(addUser({uid:uid,email:email,name:displayName}));
           navigate("/browse")
@@ -38,6 +38,7 @@ const Header = () => {
       });
       return () =>unSubscribe();
 },[]);
+  
   return (
     <div className="absolute pl-8 bg-gradient-to-b from-black z-10 flex w-full justify-between ">
       <div className='flex'>
@@ -46,10 +47,19 @@ const Header = () => {
         alt="Logo"/>
         
  { user && <ul className='flex font-semibold text-center '>
+    <Link to="/browse/">
     <li className='p-4 text-white '>Home</li>
+    </Link>
+    <Link to="/browse/tvShow">
     <li className='p-4 text-white'>TV Show</li>
-    <li className='p-4 text-white'>New</li>
-    <li className='p-4 text-white'>My List</li>
+    </Link>
+    <Link to="/browse/movies">
+    <li className='p-4 text-white'>Movies</li>
+    </Link>
+
+    <Link to="/browse/search">
+    <li className='p-4 text-white'>Search</li>
+    </Link>
   </ul>}
     </div>
     { user &&<div className='flex'>
@@ -59,7 +69,7 @@ const Header = () => {
     <div className='font-extrabold text-white pt-4 px-2'>
     <p  className='cursor-pointer'
     onClick={HandelSignOut}>^</p>
-    {signout &&<button className='bg-red-500 pl-1'
+    {signout &&<button className='bg-red-500 px-2 '
     onClick={HandelUser}>signOut</button>}
     </div>
     </div>}
