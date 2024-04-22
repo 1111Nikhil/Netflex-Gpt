@@ -6,8 +6,6 @@ from "firebase/auth";
 import { auth } from '../utils/firebase';
 import Header from './Header';
 
-
-
 const Login = () => {
    const [isSignIn,setIsSignIn] = useState(true);
   const [errorMessage,seterrorMessage] = useState();
@@ -16,7 +14,7 @@ const Login = () => {
    const password = useRef();
   const name = useRef();
    const mobile = useRef();
-     const HandelClick = (e) =>{
+   const HandelClick = (e) =>{
     e.preventDefault()
   const Message = 
   ValidData(email.current.value,password.current.value);
@@ -24,14 +22,13 @@ const Login = () => {
       if(Message) return;
   if(!isSignIn){
         createUserWithEmailAndPassword
-        (auth,email.current.value,password.current.value)
+        (auth,email.current.value,password.current.value,name.current.value)
   .then((userCredential) => {
      const user = userCredential.user;
     updateProfile(user, {
       displayName: name.current.value,
       phoneNumber: mobile.current.value, 
-    })    
-    console.log(user);
+    })
     setIsSignIn(!isSignIn)
      })
   .catch((error) => {
@@ -44,7 +41,7 @@ const Login = () => {
     signInWithEmailAndPassword(auth,email.current.value,password.current.value)
   .then((userCredential) => {
      const user = userCredential.user;
-      
+     console.log(user); 
   })
   .catch((error) => {
     const errorCode = error.code;
