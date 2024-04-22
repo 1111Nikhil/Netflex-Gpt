@@ -8,9 +8,9 @@ const Footer = () => {
             <img className='w-1/4'
             src={Netflex_Logo}
             alt='Logo'/>
-            <div className='pt-8'>
+            <div className='pt-6'>
                 <h1>Nikhil</h1>
-                <h2>bengular</h2>
+                <h2>Bengular</h2>
                 <h3>nikhil@gmail.com</h3>
             </div>
         </div>
