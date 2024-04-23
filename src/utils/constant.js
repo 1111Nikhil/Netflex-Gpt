@@ -6,6 +6,8 @@ export const Signin_Background =
 
 export const User_Log = "https://occ-0-2611-3662.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABTZ2zlLdBVC05fsd2YQAR43J6vB1NAUBOOrxt7oaFATxMhtdzlNZ846H3D8TZzooe2-FT853YVYs8p001KVFYopWi4D4NXM.png?r=229";
 
+export const Bg_Url ="https://image.tmdb.org/t/p/w780/"
+
 export const API_OPTIONS = {
     method: "GET",
     headers: {

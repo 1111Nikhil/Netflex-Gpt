@@ -5,6 +5,7 @@ import Search from "./Search";
 import SecondaryContainer from "./SecondaryContainer";
 import ShowContainer from "./Showcontainer";
 import MainContainer from "./MainContainer";
+import MovieInfo from "./MovieInfo";
 
 const Body = () =>{
     
@@ -39,6 +40,10 @@ const Body = () =>{
             {
                 path:"/browse/tvshow",
                 element:<ShowContainer/>
+            },
+            {
+                path:"/browse/info",
+                element:<MovieInfo/>
             }
         ]
  },
