@@ -14,11 +14,11 @@ const movie = useSelector(store => store.info.movieInfo)
     src={Bg_Url+movie?.backdrop_path}/>
     <div className='flex flex-col md:flex-row justify-center items-center'>
     <div >
-     <img className=' absolute top-[15%] left-10 object-over '
+     <img className=' absolute top-[25%] left-20 object-over '
      alt={movie.title}
     src={Image_url+movie?.poster_path}/>
     </div>
-    <div className='text-white px-8 py-8 z-10 w-2/4 absolute top-[15%]'>
+    <div className='text-white px-16 py-8 z-10 w-2/4 absolute top-[25%]'>
         <h1 className='text-3xl font-bold'>{movie.original_title|| movie.name}
         ({movie.release_date|| movie.first_air_date})</h1>
         <h2 className='text-xl mt-2'>Rating:{movie?.vote_average}</h2>

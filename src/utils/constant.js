@@ -21,6 +21,8 @@ export const Image_url ="https://image.tmdb.org/t/p/w220_and_h330_face/";
 
 export const Cast_url = "https://media.themoviedb.org/t/p/w300_and_h450_face/";
 
+export const Dummy_user = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png'
+
 export const SUPPORTED_LANGUAGES = [
   { identifier: "en", name: "English" },
   { identifier: "hindi", name: "हिंदी" },

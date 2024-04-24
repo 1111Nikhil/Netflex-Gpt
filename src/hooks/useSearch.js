@@ -6,7 +6,7 @@ import { addSearchMovieResult } from "../utils/infoSlice";
 
 const useSearch = () =>{
    const dispatch = useDispatch();
-   const searchMovie = useSelector(store => store.movies.searchMovie);
+   const searchMovie = useSelector(store => store.info.searchMovie);
    
    useEffect(() => {
      if (searchMovie) {

@@ -4,7 +4,7 @@ import MovieList from './MovieList';
 
 const SearchResult = () => {
   useSearch();
-  const searchMovies = useSelector(store => store.movies.searchMovieResult);
+  const searchMovies = useSelector(store => store.info.searchMovieResult);
   if(!searchMovies) return;
   const movies = searchMovies.filter((item) => item.media_type === "movie" || item.media_type ==="tv")
   // const {title,original_language,original_title,poster_path} = searchMovies
