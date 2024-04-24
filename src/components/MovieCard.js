@@ -10,7 +10,7 @@ const MovieCard = ({movies,title,poster}) => {
     dispatch(addMovieInfo(movies))
   }
   return (
-    <div className='w-44 pr-4 hover:w-52'>
+    <div className='w-24 pr-4 md:w-44 sm:32'>
     <Link to="/browse/info">
     <img 
     alt={title}

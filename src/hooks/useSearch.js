@@ -11,7 +11,7 @@ const useSearch = () =>{
      if (searchMovie) {
        searchMovieAPI(searchMovie);
      }
-   }, []);
+   }, [searchMovie]);
  
    const searchMovieAPI = async(searchMovie) =>{
      const data = await fetch

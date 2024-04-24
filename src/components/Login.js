@@ -6,6 +6,7 @@ from "firebase/auth";
 import { auth } from '../utils/firebase';
 import Header from './Header';
 
+
 const Login = () => {
    const [isSignIn,setIsSignIn] = useState(true);
   const [errorMessage,seterrorMessage] = useState();
@@ -55,12 +56,12 @@ const Login = () => {
     <div className='bg-gradient-to-b from-black '>
      <Header/>
     <div>
-        <img className='absolute'
+        <img className='absolute h-svh w-full'
         src={Signin_Background}
         alt='Login_Bg'/>
     </div>
     <form onSubmit={(e)=>e.preventDefault}
-    className='absolute w-3/12 bg-black  my-36 m-auto left-0 right-0
+    className='absolute w-4/6 sm:w-3/6  md:w-3/12 bg-black  my-20 md:my-36 m-auto left-0 right-0
      bg-opacity-80 p-8 rounded-xl text-white'>
       <h1 className='font-bold  my-4 w-full text-3xl'>
         {isSignIn?"Sign In":"Sign Up"}</h1>

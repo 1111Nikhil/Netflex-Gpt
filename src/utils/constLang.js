@@ -2,7 +2,7 @@ const lang= {
     en: {
         Home:"Home",
         movies: "Movies",
-        tvshow: "Tv Show",
+        show: "Show",
         play: "Play",
         info: "Info",
         search: "Search",
@@ -11,7 +11,7 @@ const lang= {
       hindi: {
         Home : "घर",
         movies: "चलचित्र",
-        tvshow: "टीवी शो",
+        show: "टीवी शो",
         play:"खेल",
         info:"जानकारी",
         search: "खोज",
@@ -20,7 +20,7 @@ const lang= {
       spanish: {
         Home: "hogar",
         movies:"películas",
-        tvshow:"programa de ",
+        show:"programa de ",
         play:"jugar",
         info:"información",
         search: "buscar",
@@ -29,7 +29,7 @@ const lang= {
       kannada: {
         Home: "ಮನೆ",
         movies: "ಚಿತ್ರ",
-        tvshow:"ಕಾರ್ಯಕ್ರಮ",
+        show:"ಕಾರ್ಯಕ್ರಮ",
         play:"ಆಡು",
         info:"ಮಾಹಿತಿ",
         search: "ಹುಡುಕಿ",

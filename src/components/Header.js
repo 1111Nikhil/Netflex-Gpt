@@ -47,46 +47,47 @@ const Header = () => {
 },[]);
   
   return (
-    <div className="absolute pl-8 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row w-full justify-between ">
+    <div>
+    <div className="absolute p-2 sm:pl-6 md:pl-8 bg-gradient-to-b from-black z-10 flex  md:flex-row w-full justify-between ">
       <div className='flex'>
-      <img className='w-24'
+      <img className='w-12 sm:w-24'
         src={Netflex_Logo}
         alt="Logo"/>
         
- { user && <ul className='flex font-semibold text-center '>
+ { user && <ul className='flex sm:font-semibold md:font-semibold text-center py-2 '>
     <Link to="/browse/">
-    <li className='p-4 text-white '>{lang[setLang].Home}</li>
+    <li className='px-1 sm:px-4 md:px-6 text-white '>{lang[setLang].Home}</li>
     </Link>
     <Link to="/browse/tvShow">
-    <li className='p-4 text-white'>{lang[setLang].tvshow}</li>
+    <li className='px-1 sm:px-4 md:px-6  text-white'>{lang[setLang].show}</li>
     </Link>
     <Link to="/browse/movies">
-    <li className='p-4 text-white'>{lang[setLang].movies}</li>
+    <li className='px-1 sm:px-4 md:px-6 text-white'>{lang[setLang].movies}</li>
     </Link>
-
     <Link to="/browse/search">
-    <li className='p-4 text-white'>{lang[setLang].search}</li>
+    <li className='px-1 sm:px-4 md:px-6 text-white'>{lang[setLang].search}</li>
     </Link>
   </ul>}
     </div>
     { user &&<div className='flex'>
-    { lang &&<select className='m-2 px-1 bg-gray-200'
+    { lang &&<select className='m-2 w-20 px-1 bg-gray-200'
     onChange={HandelLanguage}>
       {SUPPORTED_LANGUAGES.map((lang) => (
         <option key={lang.identifier}
          value={lang.identifier}>{lang.name}</option>
       ))}
     </select>}
-    <img className='h-12'
-    src={User_Log} alt='User_Log'/>
-    <h1 className='font-bold text-white pt-4'>{user?.name}</h1>
-    <div className='font-extrabold text-white pt-4 px-2'>
-    <p  className='cursor-pointer'
-    onClick={HandelSignOut}>^</p>
-    {signout &&<button className='bg-red-500 px-2 '
-    onClick={HandelUser}>signOut</button>}
+    <img className='h-8 sm:h-12 cursor-pointer'
+    src={User_Log} alt='User_Log '
+    onClick={HandelSignOut}/>
+    <div className='font-extrabold text-white pt-4 '>
     </div>
     </div>}
+    </div>
+    {signout &&
+    <><h1 className='font-bold text-white px-2 absolute top-10 sm:top-12 sm:pt-2 right-3'>{user?.name}</h1>
+    <button className='bg-red-500 px-2 absolute top-16 sm:top-20  right-3'
+          onClick={HandelUser}>signOut</button></>}
     </div>
   )
 }

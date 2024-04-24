@@ -10,8 +10,8 @@ const MovieCaste = () => {
     {caste.map((cast) => 
       <div 
       key={cast.id}
-      className='rounded shadow-lg my-5 mx-3'>
-      <img className='max-w-40 h-56'
+      className='rounded shadow-lg my-5 mr-4 md:mr-8 pl-2'>
+      <img className='max-w-24 sm:max-w-32 md:max-w-44'
         src={cast.profile_path?Cast_url + cast.profile_path: Dummy_user}
         alt={cast.character}
       />

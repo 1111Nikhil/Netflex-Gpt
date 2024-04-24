@@ -4,7 +4,7 @@ import SearchResult from './SearchResult';
 
 const Search = () => {
   return (
-    <div className='px-6 bg-white pt-10  h-svh'>
+    <div className='px-6 bg-white py-4 h-svh'>
         <SearchBar/>
         <SearchResult/>
         </div>

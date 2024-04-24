@@ -3,12 +3,12 @@ import { Netflex_Logo } from '../utils/constant'
 
 const Footer = () => {
   return (
-    <div className=' px-24  bg-white'>
+    <div className=' px-12  bg-white'>
         <div className='flex justify-between'> 
-            <img className='w-1/4'
+            <img className='w-2/5'
             src={Netflex_Logo}
             alt='Logo'/>
-            <div className='pt-6'>
+            <div className='px-16 items-center'>
                 <h1>Nikhil</h1>
                 <h2>Bengular</h2>
                 <h3>nikhil@gmail.com</h3>
