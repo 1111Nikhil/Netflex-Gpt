@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { API_OPTIONS } from "../utils/constant";
 import { useDispatch, useSelector } from "react-redux";
-import { addSearchMovieResult } from "../utils/moviesSlice";
+import { addSearchMovieResult } from "../utils/infoSlice";
 
 
 const useSearch = () =>{

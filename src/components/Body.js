@@ -22,7 +22,7 @@ const Body = () =>{
                 path:"/browse/",
                 element:<>
                 <MainContainer/>
-                <div className="-mt-64 pl-6">
+                <div className="-mt-64 pl-6 bg-black">
                 <SecondaryContainer/>
                 <ShowContainer/>  
                 </div>

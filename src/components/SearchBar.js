@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import lang from '../utils/constLang';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { addSearchMovie } from '../utils/moviesSlice';
+import { addSearchMovie } from '../utils/infoSlice';
 
 const SearchBar = () => {
   const movie = useRef();

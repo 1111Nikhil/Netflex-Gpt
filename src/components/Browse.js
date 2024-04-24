@@ -20,7 +20,7 @@ const Browse = () => {
   usePopularTv();
   useTopRatedTv();
     return (
-    <div className='bg-black '>
+    <div>
       <Header/>
       <Outlet/>
       <Footer/>

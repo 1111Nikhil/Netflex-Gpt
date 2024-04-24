@@ -47,7 +47,7 @@ const Header = () => {
 },[]);
   
   return (
-    <div className="absolute pl-8 bg-gradient-to-b from-black z-10 flex w-full justify-between ">
+    <div className="absolute pl-8 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row w-full justify-between ">
       <div className='flex'>
       <img className='w-24'
         src={Netflex_Logo}
