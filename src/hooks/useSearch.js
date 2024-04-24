@@ -7,12 +7,11 @@ import { addSearchMovieResult } from "../utils/infoSlice";
 const useSearch = () =>{
    const dispatch = useDispatch();
    const searchMovie = useSelector(store => store.info.searchMovie);
-   
    useEffect(() => {
      if (searchMovie) {
        searchMovieAPI(searchMovie);
      }
-   }, [searchMovie]);
+   }, []);
  
    const searchMovieAPI = async(searchMovie) =>{
      const data = await fetch
